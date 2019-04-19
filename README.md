@@ -5,7 +5,7 @@ Este proyecto se generó con [Angular CLI] (https://github.com/angular/angular-c
 
 ## Consideraciones
 
-Ejecute `git clone https://github.com/davidmartz207/el-baraton.git` para descargar el proyecto, luego dirijase en la linea de comandos (terminal / cmd ) `cd el-baraton` a la carpeta que se genera posterior a la descarga y ejecute `npm install`.
+Ejecute `git clone https://github.com/davidmartz207/el-baraton.git` para descargar el proyecto, luego dirijase en la linea de comandos (terminal / cmd ) `cd el-baraton` a la carpeta que se genera posterior a la descarga y ejecute `npm install`, esta acción descargará los paquetes necesarios para ejecutar el ambiente de desarrollo y compilar el proyecto.
 
 ## Servidor de desarrollo
 
