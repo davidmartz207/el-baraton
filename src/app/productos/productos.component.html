@@ -1,0 +1,71 @@
+<div class=" container-fluid pl-0 pr-0">
+  <app-cart></app-cart>
+
+  <div class=" row m-0 text-center" style="background-color:#9a9eab">
+    <div class="col-md-1 mt-1 mb-1">
+      Filtros:
+    </div>
+    <div class=" col-md-3 mt-1 mb-1">
+      <input type="number" min="1" pattern="^[0-9]" class="form-control" placeholder="Cantidad" [(ngModel)]="quantity">
+      <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="name">
+    </div>
+    <div class="col-md-3 mt-1 mb-1">
+      <th><input type="checkbox" [(ngModel)]="available"> Sólo disponibles</th>
+    </div>
+    <div class="col-md-5 mt-1 mb-1">
+      <input type="number" min="1" pattern="^[0-9]" class="form-control" placeholder="Precio Mayor que"
+        [(ngModel)]="mayq">
+
+      <input type="number" min="1" pattern="^[0-9]" class="form-control" placeholder="Precio Menor que"
+        [(ngModel)]="menq">
+    </div>
+  </div>
+
+  <div>
+    <div class="row m-0 d-flex justify-content-center">
+      <div>Orden</div>
+    </div>
+    <div class="row m-0 d-flex justify-content-center">
+      <div class="pl-2 pr-2">
+        Cantidad Asc<input type="radio" name="sort" (click)="ordenarCantidadAsc()">
+      </div>
+      <div class="pl-2 pr-2">
+        Cantidad Desc<input type="radio" name="sort" (click)="ordenarCantidadDesc()">
+      </div>
+      <div class="pl-2 pr-2">
+        Precio Asc<input type="radio" name="sort" (click)="ordenarPrecioAsc()">
+      </div>
+      <div class="pl-2 pr-2">
+        Precio Desc<input type="radio" name="sort" (click)="ordenarPrecioDesc()">
+      </div>
+      <div class="pl-2 pr-2">
+        Disponible<input type="radio" name="sort" (click)="ordenarDisponible()">
+      </div>
+      <div class="pl-2 pr-2">
+        No Disponible<input type="radio" name="sort" (click)="ordenarNoDisponible()">
+      </div>
+    </div>
+  </div>
+
+
+  <h2 class="text-center">{{ CategoryName }} </h2>
+  <div class="row m-0 d-flex justify-content-center">
+    <div
+      *ngFor="let item of Products| quantityFilter:quantity |  availableFilter:available | preciomayorFilter: mayq | preciomenorFilter: menq | nombreFilter : name "
+      class="card m-3 ">
+      <img class="card-img-top" src="../../assets/images/placeholderimg.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="text-center card-title">{{ item.name }}</h5>
+
+        <div class="d-flex justify-content-between"><span>Cantidad:</span>{{ item.quantity  }}</div>
+        <div class="d-flex justify-content-between"><span>Precio:</span>{{ item.price  }}</div>
+        <div class="d-flex justify-content-between">
+          <span>Disponible:</span>{{ item.available == true ? 'Si' : 'No'  }}
+        </div>
+        <div class="text-center mt-3">
+          <button (click)="agregarCarrito(item)" class="btn btn-secondary">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

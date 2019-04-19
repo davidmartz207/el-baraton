@@ -1,0 +1,44 @@
+.categorias {
+    position: relative;
+    color: white;
+    background-color: #5d535e;
+}
+
+.titulo{
+    padding:10px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 600;
+
+}
+
+.regresar {
+    display: none;
+    justify-content: flex-end !important; 
+    padding: 10px;
+    cursor: pointer;
+}
+
+.item{
+    margin: 10px;
+    padding:  5px;
+    background-color: #ec96a4;
+    cursor: pointer;
+}
+
+.item:hover {
+    margin: 10px;
+    padding:  5px;
+    background-color: #9a9eab;
+}
+
+.hijo{
+    display:none;
+}
+
+@media screen and(min-width: 480px){
+    .item {
+        display: none !important;
+    }
+}
+

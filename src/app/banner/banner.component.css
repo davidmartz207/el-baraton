@@ -1,0 +1,10 @@
+.banner {
+    display: flex;
+    background-color: #ec96a4;
+    min-height: 30vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+

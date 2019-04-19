@@ -1,0 +1,11 @@
+.btn-primary{
+    background-color: #5d535e;
+}
+
+.btn-primary::active{
+    background-color: #5d535e;
+}
+
+.card {
+    width: 16rem;
+}
